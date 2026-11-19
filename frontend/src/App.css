@@ -1,0 +1,8 @@
+.container { max-width: 900px; margin: 0 auto; padding: 2rem; font-family: system-ui, sans-serif; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1.5rem; }
+.card { border: 1px solid #ddd; border-radius: 8px; overflow: hidden; }
+.card img { width: 100%; height: 180px; object-fit: cover; }
+.card h2 { font-size: 1.1rem; margin: 0.75rem; }
+.price { margin: 0 0.75rem 0.75rem; font-weight: bold; }
+.empty, .error { text-align: center; padding: 2rem; }
+.error { color: #b00020; }
