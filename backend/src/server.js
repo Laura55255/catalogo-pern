@@ -10,6 +10,5 @@ app.use(cors());
 app.use(helmet());
 app.use(morgan("dev"));
 
-app.use("/api/productos", Rutas_productos);
-
+app.use("/api/products", Rutas_productos);
 app.listen(3000, () => console.log("API en http://localhost:3000"));
