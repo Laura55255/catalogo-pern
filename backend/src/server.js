@@ -9,6 +9,7 @@ const app = express();
 app.use(cors());
 app.use(helmet());
 app.use(morgan("dev"));
+app.use(express.json());
 
 app.use("/api/products", Rutas_productos);
 app.listen(3000, () => console.log("API en http://localhost:3000"));
