@@ -70,3 +70,18 @@ export const updateProduct = async (req, res) => {
 
   res.status(200).json({ success: true, data: product });
 };
+
+// HU04: elimina un producto por ID
+export const deleteProduct = async (req, res) => {
+  const id = parseId(req.params.id);
+  if (!id) return notFound(res);
+
+  const [product] = await sql`
+    DELETE FROM products
+    WHERE id = ${id}
+    RETURNING *`;
+
+  if (!product) return notFound(res);
+
+  res.status(200).json({ success: true, data: product });
+};
