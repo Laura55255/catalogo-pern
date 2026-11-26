@@ -105,6 +105,12 @@ Petición: `GET http://localhost:3000/api/products`
 |------|-----------|-----------|
 | Dos productos en la tabla | 200, `data` con 2 elementos | ![con datos](docs/evidencias/postman-con-datos.png) |
 | Tabla vacía (`DELETE FROM products;`) | 200, `data: []` | ![tabla vacía](docs/evidencias/postman-tabla-vacia.png) |
+Petición: `POST http://localhost:3000/api/products`
+| Caso | Resultado | Evidencia |
+| Producto nuevo | 200, `data` nuevo elemento | ![tabla vacía](docs/evidencias/Postman_post.png) |
+Petición: `PUT http://localhost:3000/api/products`
+| Caso | Resultado | Evidencia |
+| Producto modificado | 200, `data` elemento modificaco | ![tabla vacía](docs/evidencias/Postman_put.png) |
 
 ### Automatizadas (Jest + Supertest)
 
