@@ -8,3 +8,6 @@
 .error { color: #b00020; }
 .ok { color: #1b5e20; text-align: center; padding: 0.5rem 0; }
 .form { display: flex; flex-direction: column; gap: 0.5rem; margin: 1.5rem 0; }
+.confirm { margin: 0 0.75rem 0.75rem; display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; }
+.confirm p { width: 100%; margin: 0; }
+.btn-delete { margin: 0 0.75rem 0.75rem; }
