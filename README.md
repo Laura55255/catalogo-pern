@@ -78,6 +78,8 @@ La aplicación queda en `http://localhost:5173`.
 | Método | Ruta | Descripción | Respuesta |
 |--------|------|-------------|-----------|
 | GET | `/api/products` | Lista los productos | 200 |
+| GET | /api/products/:id | Obtiene un producto | 200 / 404 |
+| PUT | /api/products/:id | Actualiza el producto completo | 200 / 400 / 404 |
 
 Con datos:
 
