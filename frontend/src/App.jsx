@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-
+import ProductForm from "./ProductForm.jsx";
 const API_URL = import.meta.env.VITE_API_URL;
 
 export default function App() {
@@ -27,6 +27,7 @@ export default function App() {
   return (
     <main className="container">
       <h1>Catálogo de productos</h1>
+      <ProductForm onCreated={(p) => setProducts((prev) => [p, ...prev])} />
 
       {loading && <p>Cargando...</p>}
       {error && <p className="error">{error}</p>}
