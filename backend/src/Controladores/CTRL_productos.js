@@ -1,6 +1,24 @@
 import { sql } from "../Configuracion/Base_de_datos.js";
 import { productSchema } from "../validaciones/producto.schema.js";
 
+const MAX_INT = 2147483647;
+const parseId = (raw) => {
+  const id = Number(raw);
+  return Number.isInteger(id) && id > 0 && id <= MAX_INT ? id : null;
+};
+const notFound = (res) =>
+  res.status(404).json({ success: false, error: "Producto no encontrado" });
+
+export const getProductById = async (req, res) => {
+  const id = parseId(req.params.id);
+  if (!id) return notFound(res);
+
+  const [product] = await sql`SELECT * FROM products WHERE id = ${id}`;
+  if (!product) return notFound(res);
+
+  res.status(200).json({ success: true, data: product });
+};
+
 export const getProducts = async (req, res) => {
   const data = await sql`SELECT * FROM products ORDER BY created_at DESC`;
   res.status(200).json({ success: true, data });
