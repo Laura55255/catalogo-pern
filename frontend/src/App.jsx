@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "./App.css";
 import ProductForm from "./ProductForm.jsx";
 const API_URL = import.meta.env.VITE_API_URL;
@@ -40,7 +41,9 @@ export default function App() {
         {products.map((p) => (
           <article key={p.id} className="card">
             <img src={p.image} alt={p.name} />
-            <h2>{p.name}</h2>
+            <h2>
+              <Link to={`/products/${p.id}`}>{p.name}</Link>
+            </h2>
             <p className="price">${Number(p.price).toFixed(2)}</p>
           </article>
         ))}

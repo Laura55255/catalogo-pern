@@ -6,3 +6,5 @@
 .price { margin: 0 0.75rem 0.75rem; font-weight: bold; }
 .empty, .error { text-align: center; padding: 2rem; }
 .error { color: #b00020; }
+.ok { color: #1b5e20; text-align: center; padding: 0.5rem 0; }
+.form { display: flex; flex-direction: column; gap: 0.5rem; margin: 1.5rem 0; }
